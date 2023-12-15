@@ -7,7 +7,7 @@ manifest:
     - name: mine
       url-base: https://github.com/pijanowskim
   projects:
-    - name: Kinesis_zmk
+    - name: zmk
       remote: mine
       revision: adv360-z3.2-2-edited
       import: app/west.yml
