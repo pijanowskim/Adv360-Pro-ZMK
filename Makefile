@@ -1,5 +1,5 @@
 DOCKER := $(shell { command -v podman || command -v docker; })
-TIMESTAMP := $(shell date -u +"%Y%m%d%H%M")
+TIMESTAMP := $(shell TZ='Europe/Warsaw' date +"%Y%m%d%H%M")
 COMMIT := $(shell git rev-parse --short HEAD 2>/dev/null)
 detected_OS := $(shell uname)  # Classify UNIX OS
 ifeq ($(strip $(detected_OS)),Darwin) #We only care if it's OS X
