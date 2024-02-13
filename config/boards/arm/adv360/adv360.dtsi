@@ -21,6 +21,7 @@
         zephyr,code-partition = &code_partition;
         zephyr,sram = &sram0;
         zephyr,flash = &flash0;
+        zephyr,console = &cdc_acm_uart;
         zmk,kscan = &kscan0;
         zmk,backlight = &backlight;
         zmk,battery = &vbatt;
@@ -44,6 +45,7 @@
         >;
     };
 
+
     urobs_transform: keymap_transform_1 {
         compatible = "zmk,matrix-transform";
         columns = <22>;
@@ -60,8 +62,8 @@
         >;
     };
     ext-power {
+
             compatible = "zmk,ext-power-generic";
-            label = "EXT_POWER";
             control-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
         };
 
@@ -106,6 +108,9 @@
 
 &usbd {
     status = "okay";
+    cdc_acm_uart: cdc_acm_uart {
+        compatible = "zephyr,cdc-acm-uart";
+    };
 };
 
 

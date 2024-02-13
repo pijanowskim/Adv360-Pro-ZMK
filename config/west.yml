@@ -11,7 +11,7 @@ manifest:
   projects:
     - name: zmk
       remote: mine
-      revision: adv360-z3.2-2-edited
+      revision: adv360-z3.2-3-edited
       import: app/west.yml
   self:
     path: config
