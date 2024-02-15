@@ -18,8 +18,8 @@ all:
 	$(shell bin/get_version.sh >> /dev/null)
 	"$(DOCKER)" build --tag zmk --file Dockerfile .
 	"$(DOCKER)" run --rm -it --name zmk \
-		-v "/mnt/d/messing around with zmk/adv360-pro-zmk/firmware:/app/firmware$(SELINUX1)" \
-		-v "/mnt/d/messing around with zmk/adv360-pro-zmk/config:/app/config:ro$(SELINUX2)" \
+		-v $(PWD)/firmware:/app/firmware$(SELINUX1) \
+		-v $(PWD)/config:/app/config:ro$(SELINUX2) \
 		-e TIMESTAMP=$(TIMESTAMP) \
 		-e COMMIT=$(COMMIT) \
 		-e BUILD_RIGHT=true \
